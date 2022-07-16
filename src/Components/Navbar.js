@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState ,useEffect, useRef} from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import LIST from "./list";
@@ -70,6 +71,7 @@ const NAV = () => {
     return ( 
         <>
         <nav className="navbar">
+        
             <h1>{symbol} <a href="">Home</a></h1>
             
             <div className="navbar_list">
