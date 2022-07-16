@@ -17,7 +17,7 @@ const NAV = () => {
      useEffect( ()=>{
        setisloading(true);
         async function fetchData() {
-        let response=await fetch("https://s3-ap-southeast-1.amazonaws.com/he-public-data/gamesarena274f2bf.json")
+         await fetch("https://s3-ap-southeast-1.amazonaws.com/he-public-data/gamesarena274f2bf.json")
         .then((res)=>res.json()).then((data)=>{
           setitem(JSON.parse(JSON.stringify(data)));
           setnewitem(JSON.parse(JSON.stringify(data)));
