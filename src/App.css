@@ -1,3 +1,9 @@
+
+
+body{
+    background-image:url("../src/Images/8725.jpg") ;
+}
+
 .navbar{
     display: flex;
     align-items: center;
@@ -65,6 +71,7 @@
     .grids{
         
     border: 1px solid #ccc;
+    background-color: whitesmoke;
     box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
     
 
