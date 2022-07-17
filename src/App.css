@@ -19,6 +19,7 @@
 .navbar h1{
  color:whitesmoke;
  margin-left: 125px;
+ display: flex;
  
 }
 @media only screen and (max-width: 600px){
