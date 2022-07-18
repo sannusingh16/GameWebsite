@@ -37,13 +37,15 @@ const NAV = () => {
     },[])
     const handlesubmit=()=>{
         const game=gamesearchref.current.value;
-        const regex=new RegExp(`${game}`)
+        const regex=new RegExp(`${game}`,'i','g')
+        console.log(regex);
         let newItem=item.filter((obj)=> regex.test(obj.title));
         setnewitem(newItem);
     }
     const handlechange=()=>{
-        const platform=filtersearch.current.value;
-        let newItem=item.filter((obj)=> obj.platform===platform);
+        const filterr=filtersearch.current.value;
+        const rege=new RegExp(`${filterr}`)
+        let newItem=item.filter((obj)=> rege.test(obj.platform) || rege.test(obj.genre ));
         setnewitem(newItem);
        
     }
@@ -61,7 +63,7 @@ const NAV = () => {
     const handlesubmitkey=(ev)=>{
        if(ev.key==='Enter'){
         const game=gamesearchref.current.value;
-        const regex=new RegExp(`${game}`)
+        const regex=new RegExp(`${game}`,'i')
         let newItem=item.filter((obj)=> regex.test(obj.title));
         setnewitem(newItem);
 
@@ -82,20 +84,35 @@ const NAV = () => {
                 <option value="Score_desc">Score Desending</option>
              </select>
         
-                <select onChange={handlechange} ref={filtersearch}>
-                <option style={{display:"none"}}>Filter </option>
+                <select onChange={handlechange}  defaultValue="Filter" ref={filtersearch}>
+                <option value="Filter" disabled style={{"display":"none"}} >Filter</option>
+                <option  disabled>Platform</option>
                 <option value="PC">PC</option>
                 <option value="PlayStation 3">PS-3</option>
                 <option value="Xbox 360">Xbox 360</option>
                 <option value="iPad">iPad</option>
                 <option value="Macintosh">Macintosh</option>
-                <option value="Nintendo DS">Nintendo DS</option>
+                <option value="Platformer">Nintendo DS</option>
+               <option  disabled >Genre</option>
+                <option value="Puzzle">Puzzle</option>
+                <option value="Sports">Sports</option>
+                <option value="Strategy">Strategy</option>
+                <option value="RPG">RPG</option>
+                <option value="Action">Action</option>
+                <option value="Adventure">Advenrture</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Board">Board</option>
+                <option value="Racing">Racing</option>
+                
+                 
                 </select>
         
             </div>
             
         </nav>
         <LIST items={newitem} loading={isloading} error={error}/>
+
      </>
     
      );

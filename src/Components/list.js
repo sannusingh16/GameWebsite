@@ -18,7 +18,9 @@ const LIST = ({items,loading,error}) => {
     
     return ( 
         <div className="grid">
-        {items.slice(1).map((obj,index)=>{ return <div className="grids" key={index}>
+        {items.map((obj,index)=>{ 
+        if(obj.title)
+        return <div className="grids" key={index}>
         <div className="text">
             <h3>{obj.title}</h3>
             <p>{obj.platform}</p>
@@ -26,7 +28,10 @@ const LIST = ({items,loading,error}) => {
             <p>{obj.editors_choice}<span><AiFillStar />{obj.score}</span></p>
             
      </div>
-        </div>})}
+        </div>
+      else{
+        return null;
+      }})}
         </div>
     );
     }

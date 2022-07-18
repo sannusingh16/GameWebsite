@@ -4,10 +4,13 @@ import NAV from './Components/Navbar';
 
 function App() {
   return (
+    
     <div className="App">
        <NAV />
-      
+       
     </div>
+   
+  
   );
 }
 
