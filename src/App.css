@@ -104,4 +104,14 @@ select{
       }
      footer{
         background-color: black;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+     }
+     .text_footer {
+        color: whitesmoke;
+     }
+     .text_footer a{
+        margin-left: 20px;
      }
